@@ -36,4 +36,10 @@ $(document).ready(function(){
 		$parent.find('input').addClass('show-text')
 	});
 	
+	$('.option-btn').click(function(event) {
+		var $this = $(this);
+		$this.parent().toggleClass('active-tag');
+	});
+	
+	
 })
