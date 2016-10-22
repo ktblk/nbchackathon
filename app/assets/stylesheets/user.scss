@@ -32,8 +32,8 @@
 }
 
 .padding-y {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .player {
@@ -41,14 +41,23 @@
   width: 85%;
 }
 
-ul,li {
-  list-style-type: none;
-  list-style-position:inside;
-  margin:0;
-  padding:0;
+.media {
   text-transform: uppercase;
+  font-family: "Abel";
+  letter-spacing: 1px;
 }
 
+
 .create-video {
-  
+  border-radius: 2px;
+  font-family: "Abel";
+  letter-spacing: 1px;
+}
+
+.dashed-border {
+  border-bottom-style: dashed;
+  border-width: 1px;
+  border-color: lightgrey;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
