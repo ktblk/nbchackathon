@@ -4,15 +4,16 @@
     <title>Nbchack</title>
     <%= csrf_meta_tags %>
 
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
     <% if stylesheet_exists?(params[:controller]) %>
       <%= stylesheet_link_tag params[:controller], :media => "all" %>
     <% else %>
       <%= stylesheet_link_tag    "application", :media => "all" %>
     <% end %>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
-    <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application", :media => "all" %>
+    
   </head>
 
   <body>

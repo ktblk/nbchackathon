@@ -25,3 +25,15 @@
 // Require vendor plugins
 // -----------------------
 //= require_tree ../../../vendor/assets/javascripts/.
+
+
+$(document).ready(function(){
+	$('.search-button').click(function(event) {
+		/* Act on the event */
+		var $this = $(this),
+			$parent = $this.closest('form');
+		
+		$parent.find('input').addClass('show-text')
+	});
+	
+})
