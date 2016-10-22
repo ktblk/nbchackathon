@@ -8,6 +8,7 @@
   font-size: 40px;
   cursor: pointer;
   color: #CCC;
+  padding-left: 0px;
 }
 
 .search-input-text {
@@ -35,3 +36,25 @@
     transition: width 1s cubic-bezier(0, 0.795, 0, 1);
   }
 }
+
+.no-padding {
+  padding: 0px;
+}
+
+.font-32 {
+  font-size: 32px;
+}
+
+.red-color {
+  color: EA6EA1;
+}
+
+.blue-color {
+  color: #657c9c;
+}
+
+// .tabs-selecton {
+//   .active {
+    
+//   }
+// }
