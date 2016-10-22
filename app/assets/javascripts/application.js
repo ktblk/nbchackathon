@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require general/bootstrap
+//= require_self
+
+// Require haku lib files
+// -----------------------
+// require function
+
+// Require vendor plugins
+// -----------------------
+//= require_tree ../../../vendor/assets/javascripts/.
