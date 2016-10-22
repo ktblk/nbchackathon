@@ -19,12 +19,12 @@
   font-size: 30px;
   font-family: "Abel";
   color: #FE5F55;
-  &.form-control { 
+  &.form-control {
     width: 0%;
     padding-left: 0px;
-    padding-right: 0px; 
+    padding-right: 0px;
   }
-  
+
   &:focus {
     color: #FE5F55;
     border-color: #CCC;
@@ -118,6 +118,13 @@
 .right-section {
   position: fixed;
   right: 0px;
+  overflow-y: auto;
+}
+
+.left-section {
+  position: fixed;
+  left: 0px;
+  overflow-y: auto;
 }
 
 .border-left-1 {
