@@ -8,6 +8,10 @@
 	height: 100vh;
 }
 
+.custom-height-100 {
+	height: calc(100vh - 50px);
+}
+
 .border-right-1 {
 	border-right: 1px solid #CCC;
 }
