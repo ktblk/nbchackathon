@@ -2,6 +2,7 @@ $(function(){
   videoClip();
   article();
   mediaGallery();
+  ranking();
 })
 
 function article() {
@@ -77,6 +78,35 @@ function mediaGallery() {
           readmore = value.url;
           type = value.type;
           console.log(description, photo, readmore, type);
+      })
+    })
+  });
+
+}
+
+
+
+function ranking() {
+
+  var description = "";
+    var photo = "";
+    var readmore = "";
+    var personofinterest = "";
+
+  $.ajax({
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=10&sort=oldest',
+    type: 'GET',
+    dataType: 'JSON',
+    headers: {'api_key': '3skg7sqckwerht69jufrqjus'}
+  })
+  .done(function(data) {
+    $.each(data, function(index, value){
+      $.each(value, function(index, value){
+        description = value.title;
+        photo = value.photo.url;
+        readmore = value.url;
+        personofinterest = value.photo.title;
+        console.log(description, photo, readmore, personofinterest);
       })
     })
   });
