@@ -1,6 +1,5 @@
 $(function(){
 
-
   $.ajax({
     url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=10&sort=newest',
     type: 'GET',
@@ -12,7 +11,7 @@ $(function(){
       $.each(value, function(index, value){
         var description = value.description;
         var photo = value.photo.url;
-      console.log(description, photo);
+        console.log(description, photo);
       })
     })
   });

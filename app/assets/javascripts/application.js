@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require general/tether
 //= require general/bootstrap
+//= require_self
+
 
 // Require haku lib files
 // -----------------------
@@ -23,4 +25,3 @@
 // Require vendor plugins
 // -----------------------
 //= require_tree ../../../vendor/assets/javascripts/.
-//= require_self
