@@ -24,6 +24,7 @@ module Nbchack
     config.assets.version = '1.0'
 
     config.assets.precompile += ['application.css']
+    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
     config.assets.initialize_on_precompile = false
     config.assets.paths << Rails.root.join("vendor","assets", "fonts")

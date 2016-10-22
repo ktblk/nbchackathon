@@ -4,11 +4,27 @@
     <title>Nbchack</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if stylesheet_exists?(params[:controller]) %>
+      <%= stylesheet_link_tag params[:controller], :media => "all" %>
+    <% else %>
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+    <% end %>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application", :media => "all" %>
   </head>
 
   <body>
     <%= yield %>
+
+
+    <div class="javascript">
+      <% if javascript_exists?(params[:controller]) %>
+        <%= javascript_include_tag params[:controller] %>
+      <% else %>
+        <%= javascript_include_tag "application" %>
+      <% end %>
+    </div>
   </body>
 </html>
