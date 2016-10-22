@@ -1,14 +1,24 @@
-<ul class="nav nav-inline abel-font font-32 col-xs-12 no-padding tabs-selecton">
+
+
+<ul class="nav nav-pills abel-font font-32 col-xs-12 no-padding tabs-selection" role="tablist">
   <li class="nav-item">
-    <a class="nav-link blue-color active" href="#">All</a>
+    <a class="nav-link blue-color active" href="#profile" role="tab" data-toggle="tab">All</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link blue-color" href="#">Video</a>
+    <a class="nav-link blue-color" href="#buzz" role="tab" data-toggle="tab">Video</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link blue-color" href="#">Image</a>
+    <a class="nav-link blue-color" href="#references" role="tab" data-toggle="tab">Images</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link blue-color" href="#">Article</a>
+    <a class="nav-link blue-color" href="#articles" role="tab" data-toggle="tab">Articles</a>
   </li>
 </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="profile">All</div>
+  <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+  <div role="tabpanel" class="tab-pane fade" id="references">ccc</div>
+  <div role="tabpanel" class="tab-pane fade" id="articles">Articles</div>
+</div>

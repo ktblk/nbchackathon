@@ -46,15 +46,33 @@
 }
 
 .red-color {
-  color: EA6EA1;
+  color: #EA6EA1;
 }
 
 .blue-color {
   color: #657c9c;
 }
 
-// .tabs-selecton {
-//   .active {
-    
-//   }
-// }
+.nav-pills.tabs-selection {
+  .nav-link.active {
+    background-color: #EA6EA1;
+    a:hover,a:focus,a:active, a:visited {
+      background-color: #EA6EA1;
+    }
+  }
+  a:hover,a:focus,a:active, a:visited {
+    text-decoration: none;
+  }
+  li {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 1px solid #CCC;
+    &:last-child {
+      border-right: 1px solid #CCC;
+    }
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
