@@ -18,22 +18,23 @@
   border-radius: 0;
   font-size: 30px;
   font-family: "Abel";
-  color: #EA6EA1;
-  &.form-control { 
+  color: #FE5F55;
+  &.form-control {
     width: 0%;
     padding-left: 0px;
-    padding-right: 0px; 
+    padding-right: 0px;
   }
-  
+
   &:focus {
-    color: #EA6EA1;
+    color: #FE5F55;
     border-color: #CCC;
   }
   &.show-text {
     width: 100%;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-    transition: width 1s cubic-bezier(0, 0.795, 0, 1);
+    transition: width 1s ease;
+    // transition: width 1s cubic-bezier(0, 0.795, 0, 1);
   }
 }
 
@@ -45,16 +46,92 @@
   font-size: 32px;
 }
 
+.font-18 {
+  font-size: 18px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
 .red-color {
-  color: EA6EA1;
+  color: #FE5F55;
 }
 
 .blue-color {
-  color: #657c9c;
+  color: #577399;
 }
 
-// .tabs-selecton {
-//   .active {
-    
-//   }
-// }
+.dark-blue-color {
+  color: #2C3E50;
+}
+
+.nav-pills.tabs-selection {
+  .nav-link.active {
+    background-color: #FE5F55;
+    a:hover,a:focus,a:active, a:visited {
+      background-color: #FE5F55;
+    }
+  }
+  a:hover,a:focus,a:active, a:visited {
+    text-decoration: none;
+  }
+  li {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 1px solid #CCC;
+    &:last-child {
+      border-right: 1px solid #CCC;
+    }
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+.margin-20-y {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.spacer-md {
+  height: 35px;
+}
+
+.custom-card {
+  padding: 15px;
+  border-color: #CCC;
+  margin-bottom: 15px;
+  .card-block {
+    padding: 15px 0px;
+  }
+}
+
+.card-columns {
+  column-count: 2;
+}
+
+.right-section {
+  position: fixed;
+  right: 0px;
+  overflow-y: auto;
+}
+
+.left-section {
+  position: fixed;
+  left: 0px;
+  overflow-y: auto;
+}
+
+.border-left-1 {
+  border-left: 1px solid #CCC
+}
+
+.font-22 {
+  font-size: 22px;
+}
