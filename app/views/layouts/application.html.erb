@@ -17,5 +17,15 @@
 
   <body>
     <%= yield %>
+
+
+    <div class="javascript">
+      <% if javascript_exists?(params[:controller]) %>
+        <%= javascript_include_tag params[:controller] %>
+      <% else %>
+        <%= javascript_include_tag "application" %>
+      <% end %>
+    </div>
   </body>
 </html>
+
