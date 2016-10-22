@@ -1,24 +1,34 @@
-
-
-<ul class="nav nav-pills abel-font font-32 col-xs-12 no-padding tabs-selection" role="tablist">
+<ul class="nav nav-pills abel-font font-32 col-xs-12 abel-font no-padding tabs-selection" role="tablist">
   <li class="nav-item">
-    <a class="nav-link blue-color active" href="#profile" role="tab" data-toggle="tab">All</a>
+    <a class="nav-link blue-color active" href="#all" role="tab" data-toggle="tab">All</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link blue-color" href="#buzz" role="tab" data-toggle="tab">Video</a>
+    <a class="nav-link blue-color" href="#video" role="tab" data-toggle="tab">Video</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link blue-color" href="#references" role="tab" data-toggle="tab">Images</a>
+    <a class="nav-link blue-color" href="#images" role="tab" data-toggle="tab">Images</a>
   </li>
   <li class="nav-item">
     <a class="nav-link blue-color" href="#articles" role="tab" data-toggle="tab">Articles</a>
   </li>
 </ul>
-
+<div class="spacer-md col-xs-12"></div>
+<div class="col-xs-12 no-padding">
+  <span class="abel-font font-22 blue-color text-uppercase">The Lastest Content</span>
+</div>
+<div class="spacer-md col-xs-12"></div>
 <!-- Tab panes -->
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="profile">All</div>
-  <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
-  <div role="tabpanel" class="tab-pane fade" id="references">ccc</div>
-  <div role="tabpanel" class="tab-pane fade" id="articles">Articles</div>
+<div class="tab-content col-xs-12 no-padding abel-font">
+  <div role="tabpanel" class="tab-pane fade in active" id="all">
+    <%= render "list" %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="video">
+    <%= render "list" %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="images">
+    <%= render "list" %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="articles">
+    <%= render "list" %>
+  </div>
 </div>
