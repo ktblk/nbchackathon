@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==============NBC HACKATHON===============
 
-Things you may want to cover:
 
-* Ruby version
+  Created for the NBCUniversal Hackathon - October, 2016
 
-* System dependencies
+  "Fast Video" Challenge
 
-* Configuration
+  Utilizing NBC, Telemundo and WireWax API's
 
-* Database creation
 
-* Database initialization
+==========================================
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![alt tag]('app/assets/images/front_page1.jpg')
+![alt tag]('app/assets/images/options1.jpg')
+![alt tag]('app/assets/images/search1')
+![alt tag]('app/assets/images/telemundo1.jpg')
+![alt tag]('app/assets/images/share1.jpg')
