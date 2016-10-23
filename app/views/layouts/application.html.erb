@@ -4,6 +4,12 @@
     <title>Nbchack</title>
     <%= csrf_meta_tags %>
 
+    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
     <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -14,7 +20,7 @@
     <% end %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css" />
     <%= javascript_include_tag "application", :media => "all" %>
-    
+
   </head>
 
   <body>

@@ -274,12 +274,12 @@ function searchArticles(nbc, articleReload){
 
 function searchVideos(nbc, reload){
   var url = 'https://api.nbcuni.com:443/news-content/content/videos',
-    size = 5,
+    size = 10,
     value = $(".search-input-text").val();
   var q = "";
   if ($(".search-input-text").val().length > 0) {
     url   = 'https://api.nbcuni.com:443/news-content/content/videos/search',
-    size  = reload ? 7 : 20,
+    size  = reload ? 5 : 20,
     q     = value;
   }
 
@@ -299,7 +299,7 @@ function loadContent(nbc){
     url: 'https://api.nbcuni.com:443/news-content/content/articles',
     data: {
       filters: 'breakingNews:true',
-      size: 9
+      size: 5
     }
   };
   nbc.getArticles(articleOpts);
@@ -309,7 +309,9 @@ function loadContent(nbc){
     firstLoad: true,
     size: 5
   }
-  nbc.getVideos(videos);
+  setTimeout(function(){
+    nbc.getVideos(videos);
+  },2000)
 }
 
 
@@ -327,10 +329,10 @@ function ranking() {
     var personofinterest = "";
 
   $.ajax({
-    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=5&sort=latest',
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=10&sort=latest',
     type: 'GET',
     dataType: 'JSON',
-    headers: {'api_key': $('#token_telemundo').val() }
+    headers: { 'api_key': $('#token_telemundo').val() }
   })
   .done(function(data) {
     $("#telemundo").find('.card-columns').empty();
