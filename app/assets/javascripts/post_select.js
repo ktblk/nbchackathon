@@ -3,7 +3,7 @@ $(document).on('click','.selected-block button.close-btn',function(event){
 	var $this = $(this),
 		$parent = $this.closest('.selected-block');
 
-	$parent.fadeOut('slow', function() {
+	$parent.slideUp('slow', function() {
 		$(this).remove();
 		displayHrTag()
 	});
@@ -21,9 +21,13 @@ $(document).on('click','.read-btn',function(event){
 	$cloneBlock.find('p.text-title').text(options.title);
 	$cloneBlock.find('.media-body').data(options);
 	$this.closest('.options-block').toggleClass('active-tag');
-
+	$cloneBlock.hide();
 	$('.selected-section').append($cloneBlock);
-	displayHrTag()
+	$cloneBlock.slideDown('slow', function() {
+		displayHrTag()
+	});
+	
+	
 });
 
 $(document).on('click','button.create-video',function(event){
@@ -39,7 +43,13 @@ $(document).on('click','button.create-video',function(event){
 		});
 		$('.create-vide-section').fadeOut(3000, function() {
 			$('.image-view-section').show();
-			$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
+			
+			if( false ) {
+				$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
+			} else {
+				$('.image-view-section').html( '<iframe width="100%" height="432" src="//embed.wirewax.com/8042662/" frameborder="0" scrolling="no" allowfullscreen></iframe>' );
+			}
+			
 			$('button.create-video, .selected-section').fadeOut('slow', function() {
 				$('#accordion').fadeIn();
 			});
@@ -57,8 +67,8 @@ $(document).on('click','button.create-video',function(event){
 
 function displayHrTag() {
 	if( $('.selected-block').not(".clone-template").length > 0 ) {
-			$('.selected-hr').fadeIn();
+			$('.selected-hr').slideDown('fast');
 		} else {
-			$('.selected-hr').fadeOut();
+			$('.selected-hr').slideUp('fast');
 		}
 }
