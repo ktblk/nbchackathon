@@ -39,7 +39,7 @@ $(document).on('click','button.create-video',function(event){
 		});
 		$('.create-vide-section').fadeOut('fast', function() {
 			$('.image-view-section').show();
-			$('.image-view-section').slick({arrows: false});
+			$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
 			$('button.create-video, .selected-section').fadeOut('slow', function() {
 				$('#accordion').fadeIn();
 			});
