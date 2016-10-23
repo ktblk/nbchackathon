@@ -7,13 +7,20 @@
 // 		$parent.find('input').addClass('show-text')
 // 	});
 //
+// 	$('.option-btn').click(function(event) {
+// 		var $this = $(this);
+// 		$this.parent().toggleClass('active-tag');
+// 	});
+//
+//
 // })
 
 $(function(){
   videoClip();
   article();
-  mediaGallery();
+  // mediaGallery();
   ranking();
+  // brand();
 })
 
 function article() {
@@ -24,14 +31,14 @@ function article() {
   var type = "";
 
   $.ajax({
-    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/article?limit=15',
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/article?limit=5',
     type: 'GET',
     dataType: 'JSON',
     headers: {'api_key': document.getElementById('token').value }
   })
   .done(function(data) {
     $.each(data, function(index, value){
-      // console.log(value.title, value.type, value.url, value.cover_image.url);
+      // console.log(value);
         description = value.title;
         photo = value.cover_image.url;
         readmore = value.url;
@@ -50,13 +57,14 @@ function videoClip() {
   var type = "";
 
   $.ajax({
-    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/video_clip?limit=15',
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/video_clip?limit=5',
     type: 'GET',
     dataType: 'JSON',
     headers: {'api_key': document.getElementById('token').value }
   })
   .done(function(data) {
     $.each(data, function(index, value){
+      // console.log(value);
       description = value.title;
       video = value.url;
       type = value.type;
@@ -76,7 +84,7 @@ function mediaGallery() {
     var type = "";
 
   $.ajax({
-    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/media_gallery?limit=10',
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/content/media_gallery?limit=5',
     type: 'GET',
     dataType: 'JSON',
     headers: {'api_key': document.getElementById('token').value }
@@ -84,6 +92,7 @@ function mediaGallery() {
   .done(function(data) {
     $.each(data, function(index, value){
       $.each(data, function(index, value){
+        // console.log(value);
         description = value.title;
           photo = value.cover_image.url;
           readmore = value.url;
@@ -105,7 +114,7 @@ function ranking() {
     var personofinterest = "";
 
   $.ajax({
-    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=10&sort=oldest',
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=5&sort=latest',
     type: 'GET',
     dataType: 'JSON',
     headers: {'api_key': document.getElementById('token').value }
@@ -113,6 +122,7 @@ function ranking() {
   .done(function(data) {
     $.each(data, function(index, value){
       $.each(value, function(index, value){
+        // console.log(value);
         description = value.title;
         photo = value.photo.url;
         readmore = value.url;
@@ -123,3 +133,24 @@ function ranking() {
   });
 
 }
+
+// function brand() {
+//
+//   var description = "";
+//     var photo = "";
+//     var readmore = "";
+//     var personofinterest = "";
+//
+//   $.ajax({
+//     url: 'http://stage-api.nbcuni.com/telemundo/v1/content/brand',
+//     type: 'GET',
+//     dataType: 'JSON',
+//     headers: {'api_key': document.getElementById('token').value }
+//   })
+//   .done(function(data) {
+//     $.each(data, function(index, value){
+//         console.log(value);
+//     })
+//   });
+//
+// }

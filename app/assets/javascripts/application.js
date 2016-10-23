@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require general/tether
 //= require general/bootstrap
+//= require post_select
 //= require_self
 
 
@@ -36,7 +37,7 @@ $(document).ready(function(){
 		$parent.find('input').addClass('show-text')
 	});
 
-	$('.option-btn').click(function(event) {
+	$(document).on('click', '.option-btn', function(event) {
 		var $this = $(this);
 		$this.parent().toggleClass('active-tag');
 	});
