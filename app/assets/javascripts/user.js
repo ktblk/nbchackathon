@@ -151,6 +151,7 @@ var NBC = function() {
       $('.truncate_me').truncate({
         lines: 2
       });
+      searchingText();
     });
   };
 
@@ -193,6 +194,11 @@ var NBC = function() {
         }else {
           $("#video").find('.card-columns').append(NbcHtml.video({data: store}));
         }
+        
+        $('.truncate_me').truncate({
+          lines: 2
+        });
+        searchingText();
 
       });
     });
@@ -251,4 +257,13 @@ function isBreakingNews(value) {
 
 function truncateString(title, length){
   return jQuery.trim(title).substring(0, length) .trim(this) + "...";jQuery.trim(title).substring(0, length).trim(this) + "...";
+}
+
+function searchingText() {
+  if( $('.search-input-text').val() == "" ) {
+    var text = "The Lastest Content"
+  } else {
+    var text = "Showing Results for " + $('.search-input-text').val();
+  }
+  $('.searching-text').text( text )
 }
