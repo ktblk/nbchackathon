@@ -141,7 +141,7 @@ function getNbcImages(){
     url: 'https://api.nbcuni.com/news-content/content/images',
     type: 'GET',
     dataType: 'JSON',
-    headers: {"Content-Type": "application/json", api_key: 'cphjtveuye4xp2dwjvwjnhe8' }
+    headers: {"Content-Type": "application/json", api_key: '' }
   })
   .done(function(data) {
     console.log(data);
