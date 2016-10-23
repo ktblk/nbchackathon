@@ -47,3 +47,9 @@ $(document).ready(function(){
 		$this.closest('.share-video').toggleClass('clicked');
 	});
 })
+
+
+$(document).on('click', '.create-video', function(e){
+	e.preventDefault();
+
+})
