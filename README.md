@@ -12,8 +12,8 @@
 
 ==========================================
 
-![alt tag]('app/assets/images/front_page1.jpg')
-![alt tag]('app/assets/images/options1.jpg')
-![alt tag]('app/assets/images/search1')
-![alt tag]('app/assets/images/telemundo1.jpg')
-![alt tag]('app/assets/images/share1.jpg')
+![alt tag](app/assets/images/front_page1.jpg)
+![alt tag](app/assets/images/options1.jpg)
+![alt tag](app/assets/images/search1)
+![alt tag](app/assets/images/telemundo1.jpg)
+![alt tag](app/assets/images/share1.jpg)
