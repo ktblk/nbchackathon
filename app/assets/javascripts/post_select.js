@@ -47,7 +47,7 @@ $(document).on('click','button.create-video',function(event){
 			if( false ) {
 				$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
 			} else {
-				$('.image-view-section').html( '<iframe width="100%" height="280" src="//embed.wirewax.com/8042662/" frameborder="0" scrolling="no" allowfullscreen></iframe>' );
+				$('.image-view-section').html( '<iframe width="100%" height="432" src="//embed.wirewax.com/8042662/" frameborder="0" scrolling="no" allowfullscreen></iframe>' );
 			}
 			
 			$('button.create-video, .selected-section').fadeOut('slow', function() {
