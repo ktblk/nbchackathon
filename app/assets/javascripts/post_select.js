@@ -41,7 +41,7 @@ $(document).on('click','button.create-video',function(event){
 			img.attr('src',  $(this).data().url);
 			$(".image-view-section").append(img);
 		});
-		$('.create-vide-section,button.create-video, .selected-section').fadeOut('fast', function() {
+		$('.create-video-section,button.create-video, .selected-section').fadeOut('fast', function() {
 			
 			if( false ) {
 				$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
@@ -57,7 +57,7 @@ $(document).on('click','button.create-video',function(event){
 	} else {
 		$('.image-view-section').fadeOut('slow', function() {
 			$('.image-view-section').empty();
-			$('.create-vide-section').show();
+			$('.create-video-section').show();
 			$('#accordion').fadeOut();
 		});
 	}
