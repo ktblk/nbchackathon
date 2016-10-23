@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require general/tether
 //= require general/bootstrap
+//= require post_select
 //= require_self
 
 

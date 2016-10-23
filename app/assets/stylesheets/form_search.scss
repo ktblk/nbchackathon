@@ -175,3 +175,59 @@
 
   }
 }
+
+.color-ccc {
+  color: #CCC;
+}
+
+.display-table {
+  display: table;
+}
+
+.height-280 {
+  height: 280px;
+}
+
+.color-ccc {
+  color: #CCC;
+}
+
+.selected-section {
+  // max-height: calc( 100vh - 400px );
+  // overflow-y: auto;
+  .clone-template {
+    display: none;
+  }
+  .selected-block:not(.clone-template) {
+    border-bottom: 1px dashed #CCC;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    &:last-of-type {
+      border-width: 0px;
+    }
+  }
+  .selected-block {
+    .text-title {
+      color: #577399;
+    }
+    &:hover {
+      background-color: #577399;
+      .text-title {
+        color: #FFF;
+      }
+      .close-btn {
+        background-color: #FFF;
+      }
+    }
+  }
+  .max-width-120 {
+    max-width: 120px;
+  }
+}
+
+.selected-hr {
+  display: none;
+}
+
