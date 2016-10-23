@@ -33,7 +33,7 @@ $(document).on('click','.read-btn',function(event){
 $(document).on('click','button.create-video',function(event){
 	var $this = $(this),
 		$blocks = $('.selected-block:visible').find('.media-body');
-
+	
 	if( $blocks.length > 0 ) {
 		$(".image-view-section").empty();
 		$blocks.each(function(i,x) {
@@ -52,16 +52,16 @@ $(document).on('click','button.create-video',function(event){
 			$('.image-view-section').slideDown('slow', function() {	
 				$('#accordion').fadeIn();
 			});
-
+			
 		});
 	} else {
-		$('.image-view-section').fadeOut('slow', function() {
+		$('.image-view-section').fadeOut('fast', function() {
 			$('.image-view-section').empty();
 			$('.create-vide-section').show();
 			$('#accordion').fadeOut();
 		});
 	}
-
+	
 });
 
 function displayHrTag() {

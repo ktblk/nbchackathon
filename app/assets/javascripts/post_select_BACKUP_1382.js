@@ -41,7 +41,12 @@ $(document).on('click','button.create-video',function(event){
 			img.attr('src',  $(this).data().url);
 			$(".image-view-section").append(img);
 		});
+<<<<<<< HEAD
 		$('.create-vide-section,button.create-video, .selected-section').fadeOut('fast', function() {
+=======
+		$('.create-vide-section').fadeOut(3000, function() {
+			$('.image-view-section').show();
+>>>>>>> origin/master
 			
 			if( false ) {
 				$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });

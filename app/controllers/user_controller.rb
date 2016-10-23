@@ -8,7 +8,6 @@ class UserController < ApplicationController
   def index
   end
 
-
   def generate_video
     urls = params[:urls]
     slideshow_transcoder = ""

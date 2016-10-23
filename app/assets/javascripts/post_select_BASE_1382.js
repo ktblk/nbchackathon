@@ -33,7 +33,7 @@ $(document).on('click','.read-btn',function(event){
 $(document).on('click','button.create-video',function(event){
 	var $this = $(this),
 		$blocks = $('.selected-block:visible').find('.media-body');
-
+	
 	if( $blocks.length > 0 ) {
 		$(".image-view-section").empty();
 		$blocks.each(function(i,x) {
@@ -41,7 +41,8 @@ $(document).on('click','button.create-video',function(event){
 			img.attr('src',  $(this).data().url);
 			$(".image-view-section").append(img);
 		});
-		$('.create-vide-section,button.create-video, .selected-section').fadeOut('fast', function() {
+		$('.create-vide-section').fadeOut('fast', function() {
+			$('.image-view-section').show();
 			
 			if( false ) {
 				$('.image-view-section').slick({arrows: false, autoplay: true, autoplaySpeed: 2000 });
@@ -49,19 +50,19 @@ $(document).on('click','button.create-video',function(event){
 				$('.image-view-section').html( '<iframe width="100%" height="432" src="//embed.wirewax.com/8042662/" frameborder="0" scrolling="no" allowfullscreen></iframe>' );
 			}
 			
-			$('.image-view-section').slideDown('slow', function() {	
+			$('button.create-video, .selected-section').fadeOut('slow', function() {
 				$('#accordion').fadeIn();
 			});
-
+			
 		});
 	} else {
-		$('.image-view-section').fadeOut('slow', function() {
+		$('.image-view-section').fadeOut('fast', function() {
 			$('.image-view-section').empty();
 			$('.create-vide-section').show();
 			$('#accordion').fadeOut();
 		});
 	}
-
+	
 });
 
 function displayHrTag() {
