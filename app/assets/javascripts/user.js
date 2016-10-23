@@ -1,89 +1,58 @@
 $(function(){
   var nbc = new NBC;
 
-  var articleOpts = {
-    url: 'https://api.nbcuni.com:443/news-content/content/articles',
-    data: {
-      filters: 'breakingNews:true',
-      size: 5
-    }
-  };
-  nbc.getArticles(articleOpts);
-  // -----------------------------------------
-  var videos = {
-    url: 'https://api.nbcuni.com:443/news-content/content/videos',
-    firstLoad: true,
-    size: 5
-  }
-  nbc.getVideos(videos);
+  loadContent(nbc);
   // -----------------------------------------
 })
 
 $(document).on('shown.bs.tab', 'a[data-toggle="tab"]' , function (e) {
   var nbc = new NBC;
   var target = $(e.target).attr("href") // activated tab
-  if (!target.includes("all")) {
-    $(target).find('.card-columns').empty();
+  // if (!target.includes("all")) {
+  $(target).find('.card-columns').empty();
+  // }
+
+
+  if (target.includes("all")) {
+    var reload = true;
+    searchVideos(nbc, reload);
+    searchArticles(nbc, reload)
   }
+
   if (target.includes("video")) {
-    var url = 'https://api.nbcuni.com:443/news-content/content/videos',
-      size = 5,
-      value = $(".search-input-text").val();
-    var q = "";
-    if ($(".search-input-text").val().length > 0) {
-      url   = 'https://api.nbcuni.com:443/news-content/content/videos/search',
-      size  = 15,
-      q     = value;
-    }
-
-    var videos = {
-      url: url,
-      size: size,
-      q: q
-    }
-    nbc.getVideos(videos);
+    searchVideos(nbc, undefined);
   }
-  if (target.includes("article")) {
-
-    var url = 'https://api.nbcuni.com:443/news-content/content/articles',
-       size = 30,
-      value = $(".search-input-text").val();
-    var q = "";
-    if (value.length > 0) {
-      url = 'https://api.nbcuni.com:443/news-content/content/articles/search',
-      size = 15,
-      q    = value;
-    }
-
-    var articleOpts = {
-      url: url,
-      fromTab: true,
-      data: {
-        size: size,
-        q: q
-      }
-    }
-    nbc.getArticles(articleOpts);
+  if (target.includes("article") || target.includes("image")) {
+    searchArticles(nbc, undefined)
   }
 });
 
 $(document).on("submit", '#form_1', function(e){
   e.preventDefault();
-  var value = $(this).find(".search-input-text").val();
+  var value = $(this).find(".search-input-text").val(),
+  currentTab = $(".tabs-selection").find(".active").data("target");
+
+  var nbc = new NBC;
+
   if (value.length === 0) {
     return false;
   }
-  var articleOpts = {
-    url: 'https://api.nbcuni.com:443/news-content/content/articles/search',
-    searching: true,
-    data: {
-      size: 15,
-      q: value
-    }
+  if (currentTab.includes("all")){
+    $(currentTab).find(".card-columns").empty();
+    var reload = true;
+    searchVideos(nbc, reload);
+    searchArticles(nbc, reload)
   }
-  var nbc = new NBC;
-  nbc.getArticles(articleOpts);
-  return false;
+
+  if (currentTab.includes("article") || currentTab.includes("image") ){
+    $(currentTab).find(".card-columns").empty();
+    searchArticles(nbc);
+  }
+
+  if (currentTab.includes("video")){
+    $(currentTab).find(".card-columns").empty();
+    searchVideos(nbc);
+  }
 })
 
 
@@ -190,11 +159,11 @@ var NBC = function() {
         var store = { urlPicture, headline, description, postType, readMoreUrl, urlVideo, video };
 
         if (opts.firstLoad) {
-          $("#all").find('.card-columns').append(NbcHtml.video({data: store}));
+            $("#all").find('.card-columns').append(NbcHtml.video({data: store}));
         }else {
-          $("#video").find('.card-columns').append(NbcHtml.video({data: store}));
+            $("#video").find('.card-columns').append(NbcHtml.video({data: store}));
         }
-        
+
         $('.truncate_me').truncate({
           lines: 2
         });
@@ -231,9 +200,12 @@ var NbcHtml = {
   video: function (opts){
     // var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
     var data = opts.data;
-    // ${data.video}
     return `<div class="card custom-card">
-          <img class="card-img-top img-fluid" src="${data.urlPicture}" alt="Card image cap">
+          <div class="video-relative" data-toggle="modal" data-target="#myVideoModal" data-headline="Nightly News Full Broadcast (October 22nd)">
+            <i class="play fa fa-play fa-4x" aria-hidden="true"></i>
+            <img class="card-img-top img-fluid" src="${data.urlPicture}"
+             alt="Card image cap">
+          </div>
           <div class="card-block">
             <h4 class="card-title font-18 dark-blue-color text-uppercase">${data.postType}</h4>
             <p class="card-text red-color font-22 truncate_me">${data.headline}</p>
@@ -267,3 +239,74 @@ function searchingText() {
   }
   $('.searching-text').text( text )
 }
+
+function searchArticles(nbc, articleReload){
+  var url = 'https://api.nbcuni.com:443/news-content/content/articles',
+     size = 30,
+    value = $(".search-input-text").val();
+  var q = "";
+  if (value.length > 0) {
+    url = 'https://api.nbcuni.com:443/news-content/content/articles/search',
+    size = articleReload ? 5 : 20,
+    q    = value;
+  }
+
+  var articleOpts = {
+    url: url,
+    fromTab: true,
+    data: {
+      size: size,
+      q: q
+    }
+  }
+
+  if (articleReload) {
+    articleOpts.fromTab = false;
+  }
+  nbc.getArticles(articleOpts);
+}
+
+function searchVideos(nbc, reload){
+  var url = 'https://api.nbcuni.com:443/news-content/content/videos',
+    size = 5,
+    value = $(".search-input-text").val();
+  var q = "";
+  if ($(".search-input-text").val().length > 0) {
+    url   = 'https://api.nbcuni.com:443/news-content/content/videos/search',
+    size  = reload ? 5 : 20,
+    q     = value;
+  }
+
+  var videos = {
+    url: url,
+    size: size,
+    q: q
+  }
+  if (reload) {
+    videos.firstLoad = true;
+  }
+  nbc.getVideos(videos);
+}
+
+function loadContent(nbc){
+  var articleOpts = {
+    url: 'https://api.nbcuni.com:443/news-content/content/articles',
+    data: {
+      filters: 'breakingNews:true',
+      size: 5
+    }
+  };
+  nbc.getArticles(articleOpts);
+  // -----------------------------------------
+  var videos = {
+    url: 'https://api.nbcuni.com:443/news-content/content/videos',
+    firstLoad: true,
+    size: 5
+  }
+  nbc.getVideos(videos);
+}
+
+
+$(document).on('show.bs.modal', '#myVideoModal' ,function (e) {
+  $('.modal').find('.modal-title').html($('[data-target="#myVideoModal"]').first().data("headline"));
+})

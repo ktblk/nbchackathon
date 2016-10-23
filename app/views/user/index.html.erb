@@ -5,7 +5,6 @@
 				<%= render "left_side" %>
 			</div>
 			<div class="col-xs-6 custom-height-100 right-section border-left-1">
-				<%#= render "right_side" %>
 				<%= render "new_right_side" %>
 			</div>
 		</div>
@@ -14,3 +13,17 @@
 </div>
 
 <%= render 'variables' %>
+
+
+<div class="modal fade" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="video">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title text-center" id="myModalLabel"></h4>
+			</div>
+			<div class="modal-body text-center">
+				<iframe width="768" height="432" src="//embed.wirewax.com/8042591/" frameborder="0" scrolling="no" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
