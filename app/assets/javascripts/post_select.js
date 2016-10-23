@@ -20,6 +20,7 @@ $(document).on('click','.read-btn',function(event){
 	$cloneBlock.find('img.media-object').attr("src" , options.url);
 	$cloneBlock.find('p.text-title').text(options.title);
 	$cloneBlock.find('.media-body').data(options);
+	$this.closest('.options-block').toggleClass('active-tag');
 	
 	$('.selected-section').append($cloneBlock);
 	displayHrTag()
