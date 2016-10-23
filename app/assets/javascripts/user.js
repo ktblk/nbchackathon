@@ -260,10 +260,13 @@ function searchArticles(nbc, articleReload){
     url: url,
     fromTab: true,
     data: {
-      filters: 'breakingNews:true',
       size: size,
       q: q
     }
+  }
+  
+  if( q.length == 0 ) {
+    articleOpts.data.filters = 'breakingNews:true';
   }
 
   if (articleReload) {
