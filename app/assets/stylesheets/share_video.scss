@@ -40,3 +40,62 @@
 .font-55 {
   font-size: 55px;
 }
+
+.create-video {
+  border-radius: 2px;
+  font-family: "Abel";
+  letter-spacing: 1px;
+  background-color: #FE5F55;
+  border-color: #FE5F55;
+  &:focus {
+    outline: 0;
+  }
+  &:active {
+    outline: 0 !important;
+  }
+}
+
+.dashed-border {
+  border-bottom-style: dashed;
+  border-width: 1px;
+  border-color: #CCC;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.scroll {
+  max-height: 270px;
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.close-btn {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  border-radius: 1px;
+  &:hover {
+    background-color: grey;
+    border-color: grey;
+    color: black;
+  }
+  &:active {
+    background-color: grey !important;
+    border-color: grey !important;
+    outline: 0 !important;
+  }
+  &:focus {
+    background-color: lightgrey;
+    border-color: lightgrey;
+    color: black;
+    outline: 0;
+  }
+}
+
+.links {
+  color: #577399;
+  &:hover {
+    color: #014c8c;
+  }
+}
