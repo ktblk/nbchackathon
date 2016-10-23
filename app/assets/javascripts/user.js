@@ -89,9 +89,14 @@ var NBC = function() {
       data: ajaxOptions
     })
     .done(function(data) {
-      var filteredData = data._embedded["nbcng:article"].filter(function(data){
+      var filteredData = [];
+      console.log("data", data)
+      if( !!data && !!data._embedded ) {
+        filteredData = data._embedded["nbcng:article"].filter(function(data){
           return data.url != null && data._embedded['nbcng:mainImage'] != null;
-      })
+        })
+      }
+      
 
       if (opts.searching) {
         $("#all").find('.card-columns').empty();
@@ -142,7 +147,12 @@ var NBC = function() {
       data: { q: '', assetType: 'OnceURL', size: size , q: q}
     })
     .done(function(data) {
-      $.each(data._embedded["nbcng:video"], function(index, val) {
+      var videolist = []; 
+      if( !!data && !!data._embedded ) {
+        videolist = data._embedded["nbcng:video"];
+      }
+      
+      $.each(videolist, function(index, val) {
         var urlPicture = val._embedded["nbcng:mainImage"].url,
             headline = val.headline,
             description = val.description,
@@ -302,7 +312,7 @@ function loadContent(nbc){
     url: 'https://api.nbcuni.com:443/news-content/content/articles',
     data: {
       filters: 'breakingNews:true',
-      size: 5
+      size: 8
     }
   };
   nbc.getArticles(articleOpts);
@@ -310,11 +320,11 @@ function loadContent(nbc){
   var videos = {
     url: 'https://api.nbcuni.com:443/news-content/content/videos',
     firstLoad: true,
-    size: 5
+    size: 15
   }
   setTimeout(function(){
     nbc.getVideos(videos);
-  },2000)
+  },1000)
 }
 
 
