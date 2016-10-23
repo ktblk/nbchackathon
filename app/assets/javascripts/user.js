@@ -1,39 +1,71 @@
 $(function(){
   var nbc = new NBC;
-  // var articleOpts = {
-  //   url: 'https://api.nbcuni.com:443/news-content/content/articles',
-  //   data: {
-  //     filters: 'breakingNews:true',
-  //     size: 5
-  //   }
-  // };
-  // nbc.getArticles(articleOpts);
-  getGrettyImages()
-  // var videos = {
-  //   url: 'https://api.nbcuni.com:443/news-content/content/videos'
-  // }
-  // nbc.getVideos(videos);
+
+  var articleOpts = {
+    url: 'https://api.nbcuni.com:443/news-content/content/articles',
+    data: {
+      filters: 'breakingNews:true',
+      size: 5
+    }
+  };
+  nbc.getArticles(articleOpts);
+  // -----------------------------------------
+  var videos = {
+    url: 'https://api.nbcuni.com:443/news-content/content/videos',
+    firstLoad: true,
+    size: 5
+  }
+  nbc.getVideos(videos);
+  // -----------------------------------------
 })
 
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]' , function (e) {
   var nbc = new NBC;
   var target = $(e.target).attr("href") // activated tab
+  if (!target.includes("all")) {
+    $(target).find('.card-columns').empty();
+  }
   if (target.includes("video")) {
     var url = 'https://api.nbcuni.com:443/news-content/content/videos',
-      size = 5;
+      size = 5,
+      value = $(".search-input-text").val();
+    var q = "";
     if ($(".search-input-text").val().length > 0) {
-      url = 'https://api.nbcuni.com:443/news-content/content/videos/search',
-      size = 15;
+      url   = 'https://api.nbcuni.com:443/news-content/content/videos/search',
+      size  = 15,
+      q     = value;
     }
 
     var videos = {
       url: url,
-      size: size
+      size: size,
+      q: q
     }
     nbc.getVideos(videos);
   }
-});
+  if (target.includes("article")) {
 
+    var url = 'https://api.nbcuni.com:443/news-content/content/articles',
+       size = 30,
+      value = $(".search-input-text").val();
+    var q = "";
+    if (value.length > 0) {
+      url = 'https://api.nbcuni.com:443/news-content/content/articles/search',
+      size = 15,
+      q    = value;
+    }
+
+    var articleOpts = {
+      url: url,
+      fromTab: true,
+      data: {
+        size: size,
+        q: q
+      }
+    }
+    nbc.getArticles(articleOpts);
+  }
+});
 
 $(document).on("submit", '#form_1', function(e){
   e.preventDefault();
@@ -74,6 +106,7 @@ var NBC = function() {
     if (filters.length > 0) {
       ajaxOptions.filters = filters;
     }
+
     $.ajax({
       url: url,
       type: 'GET',
@@ -89,6 +122,7 @@ var NBC = function() {
       if (opts.searching) {
         $("#all").find('.card-columns').empty();
       }
+
       $.each(filteredData, function(index, val) {
         // FOR ARTICLE
         var headline    = val.headline,
@@ -107,7 +141,12 @@ var NBC = function() {
 
         var imageStore = { imageUrl, imgageHeadline, imagecaption, postType, readMoreUrl };
 
-        $("#all").find('.card-columns').append(htmlArticle({articleStore: articleStore, imageStore: imageStore}));
+        if (opts.fromTab) {
+          $("#articles").find('.card-columns').append(NbcHtml.article({articleStore: articleStore, imageStore: imageStore}));
+        }else {
+          $("#all").find('.card-columns').append(NbcHtml.article({articleStore: articleStore, imageStore: imageStore}));
+        }
+
       });
       $('.truncate_me').truncate({
         lines: 2
@@ -147,62 +186,63 @@ var NBC = function() {
           Your browser does not support the video tag.
         </video>`;
 
-        var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
-        $("#video").find('.card-columns').append(htmlVideo({data: store}));
-        // $("#onPlay").append()
-        // $("body").append(video);
-        // $("body").append(JSON.stringify(store));
-        // $("body").append("<br>============================================================<br>");
+        var store = { urlPicture, headline, description, postType, readMoreUrl, urlVideo, video };
+
+        if (opts.firstLoad) {
+          $("#all").find('.card-columns').append(NbcHtml.video({data: store}));
+        }else {
+          $("#video").find('.card-columns').append(NbcHtml.video({data: store}));
+        }
+
       });
     });
   }
 }
 
 
-function htmlArticle(opts){
-  // var imageStore = { imageUrl, imgageHeadline, imagecaption };
-  // var articleStore = { headline, description, postType, readMoreUrl };
-  var store = opts.imageStore;
-  var articleStore = opts.articleStore;
-  return `<div class="card custom-card">
-        <img class="card-img-top img-fluid" src="${store.imageUrl}" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title font-18 dark-blue-color text-uppercase">${articleStore.postType}</h4>
-          <p class="card-text red-color font-22 truncate_me">${articleStore.headline}</p>
+var NbcHtml = {
+  article: function(opts){
+    // var imageStore = { imageUrl, imgageHeadline, imagecaption };
+    // var articleStore = { headline, description, postType, readMoreUrl };
+    var store = opts.imageStore;
+    var articleStore = opts.articleStore;
+    return `<div class="card custom-card">
+          <img class="card-img-top img-fluid" src="${store.imageUrl}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title font-18 dark-blue-color text-uppercase">${articleStore.postType}</h4>
+            <p class="card-text red-color font-22 truncate_me">${articleStore.headline}</p>
+          </div>
+
+        <div class="list-group text-center text-uppercase options-block">
+          <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
+          <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${store.imageUrl}" data-type="${articleStore.postType}" data-title="${articleStore.headline}">Add to video</a>
+          <a href="${articleStore.readMoreUrl}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
+          <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
         </div>
-
-      <div class="list-group text-center text-uppercase options-block">
-        <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
-        <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${store.imageUrl}" data-type="${articleStore.postType}" data-title="${articleStore.headline}">Add to video</a>
-        <a href="${articleStore.readMoreUrl}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
-        <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
       </div>
-    </div>
-  `
-}
+    `
+  },
+  video: function (opts){
+    // var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
+    var data = opts.data;
+    // ${data.video}
+    return `<div class="card custom-card">
+          <img class="card-img-top img-fluid" src="${data.urlPicture}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title font-18 dark-blue-color text-uppercase">${data.postType}</h4>
+            <p class="card-text red-color font-22 truncate_me">${data.headline}</p>
+          </div>
 
-
-function htmlVideo(opts){
-  // var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
-  var data = opts.data;
-  // ${data.video}
-  return `<div class="card custom-card">
-        <img class="card-img-top img-fluid" src="${data.urlPicture}" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title font-18 dark-blue-color text-uppercase">${data.postType}</h4>
-          <p class="card-text red-color font-22 truncate_me">${data.headline}</p>
+        <div class="list-group text-center text-uppercase options-block">
+          <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
+          <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${data.urlPicture}" data-type="${data.postType}" data-video-url="${data.urlVideo}" data-title="${data.headline}">Add to video</a>
+          <a href="${data.readMoreUrl}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
+          <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
         </div>
-
-      <div class="list-group text-center text-uppercase options-block">
-        <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
-        <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${data.urlPicture}" data-type="${data.postType}" data-video-url="${data.urlVideo}" data-title="${data.headline}">Add to video</a>
-        <a href="${data.readMoreUrl}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
-        <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
       </div>
-    </div>
-  `
+    `
+  }
 }
-
 
 function isBreakingNews(value) {
   console.log(value);
