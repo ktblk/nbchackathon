@@ -140,12 +140,38 @@
   background-color: #EEE;
 }
 
+.bg-blue {
+  background-color: #577399
+}
+
+
+
 .text-center {
   text-align: center;
 }
 
 .options-block {
+  height: 53px;
+  transition: height 0.7s ease;
+  overflow-y: hidden;
   a {
     text-decoration: none;
+    border-color: white;
+    border-radius: 0px;
+    
+  }
+  a.option-btn {
+    background-color: #EEE;
+  }
+  &.active-tag {
+    height: 209px;
+    a.option-btn {
+      color: #CCC;
+   }
+    a {
+      background-color: #577399;
+      color: white;
+    }
+    
   }
 }
