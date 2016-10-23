@@ -17,3 +17,4 @@
 .byebug_history
 
 /config/config.yml
+/config/cloudinary.yml

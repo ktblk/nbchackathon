@@ -22,8 +22,13 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]' , function (e) {
   if (target.includes("video")) {
     searchVideos(nbc, undefined);
   }
+
   if (target.includes("article") || target.includes("image")) {
     searchArticles(nbc, undefined)
+  }
+
+  if (target.includes("telemundo")) {
+    ranking();
   }
 });
 
@@ -242,12 +247,12 @@ function searchingText() {
 
 function searchArticles(nbc, articleReload){
   var url = 'https://api.nbcuni.com:443/news-content/content/articles',
-     size = 30,
+     size = 15,
     value = $(".search-input-text").val();
   var q = "";
   if (value.length > 0) {
     url = 'https://api.nbcuni.com:443/news-content/content/articles/search',
-    size = articleReload ? 5 : 20,
+    size = articleReload ? 7 : size,
     q    = value;
   }
 
@@ -255,6 +260,7 @@ function searchArticles(nbc, articleReload){
     url: url,
     fromTab: true,
     data: {
+      filters: 'breakingNews:true',
       size: size,
       q: q
     }
@@ -268,7 +274,7 @@ function searchArticles(nbc, articleReload){
 
 function searchVideos(nbc, reload){
   var url = 'https://api.nbcuni.com:443/news-content/content/videos',
-    size = 5,
+    size = 10,
     value = $(".search-input-text").val();
   var q = "";
   if ($(".search-input-text").val().length > 0) {
@@ -303,10 +309,63 @@ function loadContent(nbc){
     firstLoad: true,
     size: 5
   }
-  nbc.getVideos(videos);
+  setTimeout(function(){
+    nbc.getVideos(videos);
+  },2000)
 }
 
 
 $(document).on('show.bs.modal', '#myVideoModal' ,function (e) {
   $('.modal').find('.modal-title').html($('[data-target="#myVideoModal"]').first().data("headline"));
 })
+
+
+
+function ranking() {
+
+  var description = "";
+    var photo = "";
+    var readmore = "";
+    var personofinterest = "";
+
+  $.ajax({
+    url: 'http://stage-api.nbcuni.com/telemundo/v1/ranking/?limit=10&sort=latest',
+    type: 'GET',
+    dataType: 'JSON',
+    headers: { 'api_key': $('#token_telemundo').val() }
+  })
+  .done(function(data) {
+    $("#telemundo").find('.card-columns').empty();
+    $.each(data, function(index, value){
+      $.each(value, function(index, value){
+        $("#telemundo").find('.card-columns').append(htmlTelemundo(value));
+      })
+    })
+  });
+
+}
+
+
+function htmlTelemundo(value){
+// description = value.title;
+//         photo = value.photo.url;
+//         readmore = value.url;
+//         personofinterest = value.photo.title;
+
+
+  return `<div class="card custom-card">
+          <img class="card-img-top img-fluid" src="${value.photo.url}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title font-18 dark-blue-color text-uppercase">Telemudno</h4>
+            <p class="card-text red-color font-22 truncate_me">${value.title}</p>
+          </div>
+
+        <div class="list-group text-center text-uppercase options-block">
+          <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
+          <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${value.photo.url}" data-type="Telemudno" data-title="${value.title}">Add to video</a>
+          <a href="${value.photo.url}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
+          <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
+        </div>
+      </div>
+    `
+}
