@@ -32,14 +32,14 @@ $(document).ready(function(){
 		/* Act on the event */
 		var $this = $(this),
 			$parent = $this.closest('form');
-		
+
 		$parent.find('input').addClass('show-text')
 	});
-	
-	$('.option-btn').click(function(event) {
+
+	$(document).on('click', '.option-btn', function(event) {
 		var $this = $(this);
 		$this.parent().toggleClass('active-tag');
 	});
-	
-	
+
+
 })
