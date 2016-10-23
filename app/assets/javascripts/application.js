@@ -42,5 +42,8 @@ $(document).ready(function(){
 		$this.parent().toggleClass('active-tag');
 	});
 
-
+	$('.share-link-btn').click(function(event) {
+		var $this = $(this);
+		$this.closest('.share-video').toggleClass('clicked');
+	});
 })

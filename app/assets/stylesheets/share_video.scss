@@ -1,0 +1,42 @@
+.share-card-style {
+  border-radius: 2px;
+  border-color: #EEE;
+  background-color: #EEE;
+}
+
+.blue-background {
+  border-color: white;
+  border-top-style: dotted;
+  border-width: 1px;
+  background-color: #577399;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+    li {
+      color: white;
+      display: inline-block;
+      padding: 45px;
+    }
+  }
+}
+
+.share-video {
+  font-family: "Abel";
+  letter-spacing: 1px;
+  &.clicked {
+    background-color: #577399;
+    a {
+      color: white;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.font-55 {
+  font-size: 55px;
+}

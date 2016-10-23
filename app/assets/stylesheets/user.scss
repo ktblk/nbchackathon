@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //=require form_search
+//=require share_video
 
 @import url('https://fonts.googleapis.com/css?family=Abel|Oxygen');
 
@@ -53,7 +54,7 @@
   font-family: "Abel";
   letter-spacing: 1px;
   background-color: #FE5F55;
-  border-color: #FE5F55
+  border-color: #FE5F55;
 }
 
 .dashed-border {
