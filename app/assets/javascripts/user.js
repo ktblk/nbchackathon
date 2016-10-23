@@ -1,19 +1,38 @@
 $(function(){
   var nbc = new NBC;
-  var articleOpts = {
-    url: 'https://api.nbcuni.com:443/news-content/content/articles',
-    data: {
-      filters: 'breakingNews:true',
-      size: 5
-    }
-  };
-  nbc.getArticles(articleOpts);
+  // var articleOpts = {
+  //   url: 'https://api.nbcuni.com:443/news-content/content/articles',
+  //   data: {
+  //     filters: 'breakingNews:true',
+  //     size: 5
+  //   }
+  // };
+  // nbc.getArticles(articleOpts);
+  getGrettyImages()
   // var videos = {
   //   url: 'https://api.nbcuni.com:443/news-content/content/videos'
   // }
   // nbc.getVideos(videos);
-
 })
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var nbc = new NBC;
+  var target = $(e.target).attr("href") // activated tab
+  if (target.includes("video")) {
+    var url = 'https://api.nbcuni.com:443/news-content/content/videos',
+      size = 5;
+    if ($(".search-input-text").val().length > 0) {
+      url = 'https://api.nbcuni.com:443/news-content/content/videos/search',
+      size = 15;
+    }
+
+    var videos = {
+      url: url,
+      size: size
+    }
+    nbc.getVideos(videos);
+  }
+});
 
 
 $(document).on("submit", '#form_1', function(e){
@@ -88,7 +107,7 @@ var NBC = function() {
 
         var imageStore = { imageUrl, imgageHeadline, imagecaption, postType, readMoreUrl };
 
-        $("#all").find('.card-columns').append(html({articleStore: articleStore, imageStore: imageStore}));
+        $("#all").find('.card-columns').append(htmlArticle({articleStore: articleStore, imageStore: imageStore}));
       });
       $('.truncate_me').truncate({
         lines: 2
@@ -97,21 +116,23 @@ var NBC = function() {
   };
 
   this.getVideos = function(opts){
-    var url = opts.url;
-    var searchUrl = 'https://api.nbcuni.com:443/news-content/content/videos/search';
+    var url = opts.url,
+          q = opts.q,
+       size = opts.size;
+
     $.ajax({
       url: url,
       type: 'GET',
       dataType: 'JSON',
       headers: {"Content-Type": "application/json", api_key: this.key },
-      data: { q: '', assetType: 'OnceURL', size: '5'}
+      data: { q: '', assetType: 'OnceURL', size: size , q: q}
     })
     .done(function(data) {
       $.each(data._embedded["nbcng:video"], function(index, val) {
         var urlPicture = val._embedded["nbcng:mainImage"].url,
             headline = val.headline,
             description = val.description,
-            postType = val.videoType,
+            postType = "Video",
             readMoreUrl = val.url;
         var urlVideo = val.availableAssets[0].url;
         // debugger;
@@ -120,36 +141,25 @@ var NBC = function() {
         }
         urlVideo += '?format=redirect&formats=MPEG4';
 
-        var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo };
 
         var video = `<video width="320" height="240" controls>
           <source src="${urlVideo}" type="video/mp4">
           Your browser does not support the video tag.
         </video>`;
 
-        $("#onPlay").append()
-        $("body").append(video);
-        $("body").append(JSON.stringify(store));
-        $("body").append("<br>============================================================<br>");
+        var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
+        $("#video").find('.card-columns').append(htmlVideo({data: store}));
+        // $("#onPlay").append()
+        // $("body").append(video);
+        // $("body").append(JSON.stringify(store));
+        // $("body").append("<br>============================================================<br>");
       });
     });
   }
 }
 
-function getNbcImages(){
-  $.ajax({
-    url: 'https://api.nbcuni.com/news-content/content/images',
-    type: 'GET',
-    dataType: 'JSON',
-    headers: {"Content-Type": "application/json", api_key: '' }
-  })
-  .done(function(data) {
-    console.log(data);
-  });
-}
 
-
-function html(opts){
+function htmlArticle(opts){
   // var imageStore = { imageUrl, imgageHeadline, imagecaption };
   // var articleStore = { headline, description, postType, readMoreUrl };
   var store = opts.imageStore;
@@ -170,6 +180,29 @@ function html(opts){
     </div>
   `
 }
+
+
+function htmlVideo(opts){
+  // var store = { urlPicture,headline,description,postType,readMoreUrl, urlVideo, video };
+  var data = opts.data;
+  // ${data.video}
+  return `<div class="card custom-card">
+        <img class="card-img-top img-fluid" src="${data.urlPicture}" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title font-18 dark-blue-color text-uppercase">${data.postType}</h4>
+          <p class="card-text red-color font-22 truncate_me">${data.headline}</p>
+        </div>
+
+      <div class="list-group text-center text-uppercase options-block">
+        <a href="#" class="list-group-item blue-color option-btn font-18 ">Options</a>
+        <a href="#" class="list-group-item blue-color font-18 read-btn" data-url="${data.urlPicture}" data-type="${data.postType}" data-video-url="${data.urlVideo}" data-title="${data.headline}">Add to video</a>
+        <a href="${data.readMoreUrl}" target="_blank" class="list-group-item blue-color font-18">Read More</a>
+        <a href="#" class="list-group-item blue-color font-18">Find more like this</a>
+      </div>
+    </div>
+  `
+}
+
 
 function isBreakingNews(value) {
   console.log(value);
