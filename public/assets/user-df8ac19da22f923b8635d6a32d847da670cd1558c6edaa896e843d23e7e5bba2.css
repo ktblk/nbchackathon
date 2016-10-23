@@ -1,0 +1,461 @@
+/* line 1, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.fa.display-table-cell {
+  display: table-cell;
+}
+
+/* line 5, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-button {
+  background-color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #CCC;
+  padding-left: 0px;
+}
+
+/* line 14, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text {
+  border: none;
+  height: 56px;
+  border-bottom: 1px solid #CCC;
+  border-radius: 0;
+  font-size: 30px;
+  font-family: "Abel";
+  color: #FE5F55;
+}
+/* line 22, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text.form-control {
+  width: 0%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* line 28, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text:focus {
+  color: #FE5F55;
+  border-color: #CCC;
+}
+/* line 32, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text.show-text {
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: width 1s ease;
+}
+
+/* line 41, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.no-padding {
+  padding: 0px;
+}
+
+/* line 45, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-32 {
+  font-size: 32px;
+}
+
+/* line 49, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-18 {
+  font-size: 18px;
+}
+
+/* line 53, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-22 {
+  font-size: 22px;
+}
+
+/* line 57, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.red-color {
+  color: #FE5F55;
+}
+
+/* line 61, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.blue-color {
+  color: #577399;
+}
+
+/* line 65, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.dark-blue-color {
+  color: #2C3E50;
+}
+
+/* line 70, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection .nav-link.active {
+  background-color: #FE5F55;
+}
+/* line 72, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection .nav-link.active a:hover, .nav-pills.tabs-selection .nav-link.active a:focus, .nav-pills.tabs-selection .nav-link.active a:active, .nav-pills.tabs-selection .nav-link.active a:visited {
+  background-color: #FE5F55;
+}
+/* line 76, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection a:hover, .nav-pills.tabs-selection a:focus, .nav-pills.tabs-selection a:active, .nav-pills.tabs-selection a:visited {
+  text-decoration: none;
+}
+/* line 79, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection li {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid #CCC;
+}
+/* line 83, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection li:last-child {
+  border-right: 1px solid #CCC;
+}
+
+/* line 89, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/* line 93, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+/* line 97, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.margin-20-y {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 102, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.spacer-md {
+  height: 35px;
+}
+
+/* line 106, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.custom-card {
+  padding: 15px;
+  border-color: #CCC;
+  margin-bottom: 15px;
+}
+/* line 110, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.custom-card .card-block {
+  padding: 15px 0px;
+}
+
+/* line 115, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.card-columns {
+  column-count: 2;
+}
+
+/* line 119, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.right-section {
+  position: fixed;
+  right: 0px;
+  overflow-y: auto;
+}
+
+/* line 125, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.left-section {
+  position: fixed;
+  left: 0px;
+  overflow-y: auto;
+}
+
+/* line 131, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.border-left-1 {
+  border-left: 1px solid #CCC;
+}
+
+/* line 135, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-22 {
+  font-size: 22px;
+}
+
+/* line 139, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.bg-eee {
+  background-color: #EEE;
+}
+
+/* line 143, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.bg-blue {
+  background-color: #577399;
+}
+
+/* line 149, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 153, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block {
+  height: 53px;
+  transition: height 0.7s ease;
+  overflow-y: hidden;
+}
+/* line 157, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block a {
+  text-decoration: none;
+  border-color: white;
+  border-radius: 0px;
+}
+/* line 163, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block a.option-btn {
+  background-color: #EEE;
+}
+/* line 166, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag {
+  height: 209px;
+}
+/* line 168, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag a.option-btn {
+  color: #CCC;
+}
+/* line 171, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag a {
+  background-color: #577399;
+  color: white;
+}
+
+/* line 179, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.color-ccc {
+  color: #CCC;
+}
+
+/* line 183, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.display-table {
+  display: table;
+}
+
+/* line 187, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.height-280 {
+  height: 280px;
+}
+
+/* line 191, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.color-ccc {
+  color: #CCC;
+}
+
+/* line 198, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .clone-template {
+  display: none;
+}
+/* line 201, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:not(.clone-template) {
+  border-bottom: 1px dashed #CCC;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 207, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:not(.clone-template):last-of-type {
+  border-width: 0px;
+}
+/* line 212, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block .text-title {
+  color: #577399;
+}
+/* line 215, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover {
+  background-color: #577399;
+}
+/* line 217, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover .text-title {
+  color: #FFF;
+}
+/* line 220, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover .close-btn {
+  background-color: #FFF;
+}
+/* line 225, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .max-width-120 {
+  max-width: 120px;
+}
+
+/* line 230, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-hr {
+  display: none;
+}
+/* line 1, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-card-style {
+  border-radius: 2px;
+  border-color: #EEE;
+  background-color: #EEE;
+}
+
+/* line 7, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background {
+  border-color: white;
+  border-top-style: dotted;
+  border-width: 1px;
+  background-color: #577399;
+}
+/* line 12, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+}
+/* line 17, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background ul li {
+  color: white;
+  display: inline-block;
+  padding: 45px;
+}
+
+/* line 25, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video {
+  font-family: "Abel";
+  letter-spacing: 1px;
+}
+/* line 28, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video.clicked {
+  background-color: #577399;
+}
+/* line 30, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video.clicked a {
+  color: white;
+}
+/* line 35, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video a {
+  text-decoration: none;
+}
+
+/* line 40, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.font-55 {
+  font-size: 55px;
+}
+
+/* line 44, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video {
+  border-radius: 2px;
+  font-family: "Abel";
+  letter-spacing: 1px;
+  background-color: #FE5F55;
+  border-color: #FE5F55;
+}
+/* line 50, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video:focus {
+  outline: 0;
+}
+/* line 53, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video:active {
+  outline: 0 !important;
+}
+
+/* line 58, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.dashed-border {
+  border-bottom-style: dashed;
+  border-width: 1px;
+  border-color: #CCC;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* line 66, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.scroll {
+  max-height: 270px;
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 73, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  border-radius: 1px;
+}
+/* line 78, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:hover {
+  background-color: grey;
+  border-color: grey;
+  color: black;
+}
+/* line 83, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:active {
+  background-color: grey !important;
+  border-color: grey !important;
+  outline: 0 !important;
+}
+/* line 88, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:focus {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  outline: 0;
+}
+
+/* line 96, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.links {
+  color: #577399;
+}
+/* line 98, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.links:hover {
+  color: #014c8c;
+}
+
+/* line 104, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.play {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  opacity: 0.8;
+}
+
+/* line 111, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.video-relative {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 118, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.video-relative * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css?family=Abel|Oxygen");
+/* line 11, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.height-100 {
+  height: 100vh;
+}
+
+/* line 15, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.custom-height-100 {
+  height: calc(100vh - 50px);
+}
+
+/* line 19, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.border-right-1 {
+  border-right: 1px solid #CCC;
+}
+
+/* line 23, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.padding-15 {
+  padding: 15px;
+}
+
+/* line 27, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.abel-font {
+  font-family: "Abel";
+}
+
+/* line 31, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.oxygen-font {
+  font-family: "Oxygen";
+}
+
+/* line 35, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.padding-y {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 40, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.player {
+  height: auto;
+  width: 85%;
+}
+
+/* line 45, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/user.scss */
+.media {
+  text-transform: uppercase;
+  font-family: "Abel";
+  letter-spacing: 1px;
+}

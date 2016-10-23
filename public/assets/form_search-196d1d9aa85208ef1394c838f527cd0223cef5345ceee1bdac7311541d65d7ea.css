@@ -1,0 +1,269 @@
+/* line 1, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.fa.display-table-cell {
+  display: table-cell;
+}
+
+/* line 5, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-button {
+  background-color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #CCC;
+  padding-left: 0px;
+}
+
+/* line 14, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text {
+  border: none;
+  height: 56px;
+  border-bottom: 1px solid #CCC;
+  border-radius: 0;
+  font-size: 30px;
+  font-family: "Abel";
+  color: #FE5F55;
+}
+/* line 22, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text.form-control {
+  width: 0%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* line 28, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text:focus {
+  color: #FE5F55;
+  border-color: #CCC;
+}
+/* line 32, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.search-input-text.show-text {
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: width 1s ease;
+}
+
+/* line 41, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.no-padding {
+  padding: 0px;
+}
+
+/* line 45, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-32 {
+  font-size: 32px;
+}
+
+/* line 49, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-18 {
+  font-size: 18px;
+}
+
+/* line 53, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-22 {
+  font-size: 22px;
+}
+
+/* line 57, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.red-color {
+  color: #FE5F55;
+}
+
+/* line 61, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.blue-color {
+  color: #577399;
+}
+
+/* line 65, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.dark-blue-color {
+  color: #2C3E50;
+}
+
+/* line 70, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection .nav-link.active {
+  background-color: #FE5F55;
+}
+/* line 72, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection .nav-link.active a:hover, .nav-pills.tabs-selection .nav-link.active a:focus, .nav-pills.tabs-selection .nav-link.active a:active, .nav-pills.tabs-selection .nav-link.active a:visited {
+  background-color: #FE5F55;
+}
+/* line 76, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection a:hover, .nav-pills.tabs-selection a:focus, .nav-pills.tabs-selection a:active, .nav-pills.tabs-selection a:visited {
+  text-decoration: none;
+}
+/* line 79, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection li {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid #CCC;
+}
+/* line 83, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.nav-pills.tabs-selection li:last-child {
+  border-right: 1px solid #CCC;
+}
+
+/* line 89, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/* line 93, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+/* line 97, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.margin-20-y {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 102, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.spacer-md {
+  height: 35px;
+}
+
+/* line 106, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.custom-card {
+  padding: 15px;
+  border-color: #CCC;
+  margin-bottom: 15px;
+}
+/* line 110, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.custom-card .card-block {
+  padding: 15px 0px;
+}
+
+/* line 115, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.card-columns {
+  column-count: 2;
+}
+
+/* line 119, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.right-section {
+  position: fixed;
+  right: 0px;
+  overflow-y: auto;
+}
+
+/* line 125, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.left-section {
+  position: fixed;
+  left: 0px;
+  overflow-y: auto;
+}
+
+/* line 131, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.border-left-1 {
+  border-left: 1px solid #CCC;
+}
+
+/* line 135, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.font-22 {
+  font-size: 22px;
+}
+
+/* line 139, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.bg-eee {
+  background-color: #EEE;
+}
+
+/* line 143, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.bg-blue {
+  background-color: #577399;
+}
+
+/* line 149, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 153, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block {
+  height: 53px;
+  transition: height 0.7s ease;
+  overflow-y: hidden;
+}
+/* line 157, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block a {
+  text-decoration: none;
+  border-color: white;
+  border-radius: 0px;
+}
+/* line 163, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block a.option-btn {
+  background-color: #EEE;
+}
+/* line 166, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag {
+  height: 209px;
+}
+/* line 168, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag a.option-btn {
+  color: #CCC;
+}
+/* line 171, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.options-block.active-tag a {
+  background-color: #577399;
+  color: white;
+}
+
+/* line 179, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.color-ccc {
+  color: #CCC;
+}
+
+/* line 183, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.display-table {
+  display: table;
+}
+
+/* line 187, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.height-280 {
+  height: 280px;
+}
+
+/* line 191, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.color-ccc {
+  color: #CCC;
+}
+
+/* line 198, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .clone-template {
+  display: none;
+}
+/* line 201, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:not(.clone-template) {
+  border-bottom: 1px dashed #CCC;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 207, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:not(.clone-template):last-of-type {
+  border-width: 0px;
+}
+/* line 212, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block .text-title {
+  color: #577399;
+}
+/* line 215, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover {
+  background-color: #577399;
+}
+/* line 217, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover .text-title {
+  color: #FFF;
+}
+/* line 220, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .selected-block:hover .close-btn {
+  background-color: #FFF;
+}
+/* line 225, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-section .max-width-120 {
+  max-width: 120px;
+}
+
+/* line 230, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/form_search.scss */
+.selected-hr {
+  display: none;
+}

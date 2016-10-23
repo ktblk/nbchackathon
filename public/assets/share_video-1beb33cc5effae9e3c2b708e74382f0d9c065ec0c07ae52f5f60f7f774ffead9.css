@@ -1,0 +1,143 @@
+/* line 1, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-card-style {
+  border-radius: 2px;
+  border-color: #EEE;
+  background-color: #EEE;
+}
+
+/* line 7, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background {
+  border-color: white;
+  border-top-style: dotted;
+  border-width: 1px;
+  background-color: #577399;
+}
+/* line 12, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+}
+/* line 17, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.blue-background ul li {
+  color: white;
+  display: inline-block;
+  padding: 45px;
+}
+
+/* line 25, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video {
+  font-family: "Abel";
+  letter-spacing: 1px;
+}
+/* line 28, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video.clicked {
+  background-color: #577399;
+}
+/* line 30, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video.clicked a {
+  color: white;
+}
+/* line 35, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.share-video a {
+  text-decoration: none;
+}
+
+/* line 40, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.font-55 {
+  font-size: 55px;
+}
+
+/* line 44, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video {
+  border-radius: 2px;
+  font-family: "Abel";
+  letter-spacing: 1px;
+  background-color: #FE5F55;
+  border-color: #FE5F55;
+}
+/* line 50, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video:focus {
+  outline: 0;
+}
+/* line 53, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.create-video:active {
+  outline: 0 !important;
+}
+
+/* line 58, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.dashed-border {
+  border-bottom-style: dashed;
+  border-width: 1px;
+  border-color: #CCC;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* line 66, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.scroll {
+  max-height: 270px;
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 73, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  border-radius: 1px;
+}
+/* line 78, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:hover {
+  background-color: grey;
+  border-color: grey;
+  color: black;
+}
+/* line 83, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:active {
+  background-color: grey !important;
+  border-color: grey !important;
+  outline: 0 !important;
+}
+/* line 88, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.close-btn:focus {
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  outline: 0;
+}
+
+/* line 96, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.links {
+  color: #577399;
+}
+/* line 98, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.links:hover {
+  color: #014c8c;
+}
+
+/* line 104, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.play {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  opacity: 0.8;
+}
+
+/* line 111, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.video-relative {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 118, /Users/henryarbolaez/Desktop/nbchackathon/app/assets/stylesheets/share_video.scss */
+.video-relative * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
